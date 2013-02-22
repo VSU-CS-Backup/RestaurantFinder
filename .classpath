@@ -4,7 +4,7 @@
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
 	<classpathentry kind="src" path="gen"/>
-	<classpathentry kind="lib" path="/Users/zxu/Documents/workspace/RestaurantFinder/lib/commons-codec-1.4.jar"/>
-	<classpathentry kind="lib" path="/Users/zxu/Documents/workspace/RestaurantFinder/lib/scribe-1.1.0.jar"/>
+	<classpathentry kind="lib" path="libs/commons-codec-1.4.jar"/>
+	<classpathentry kind="lib" path="libs/scribe-1.1.0.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
