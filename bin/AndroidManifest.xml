@@ -41,6 +41,5 @@
 
 	<uses-permission android:name="android.permission.CALL_PHONE" />
 	<uses-permission android:name="android.permission.INTERNET" /> 
-	<uses-sdk android:minSdkVersion="3" android:targetSdkVersion="9"></uses-sdk>
-	<supports-screens largeScreens="false" xlargeScreens="false" anyDensity="false" /> 
+	<uses-sdk android:minSdkVersion="3" android:targetSdkVersion="9"></uses-sdk> 
 </manifest>
