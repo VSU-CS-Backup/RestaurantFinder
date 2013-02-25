@@ -15,7 +15,7 @@
 	<string name="intro_blurb_criteria">Enter review criteria</string>
 	<string name="intro_blurb_detail">Review details</string>
 
-	<string name="location_entry_label">Location (City, ST):</string>
+	<string name="location_entry_label">Location (City ST):</string>
 	<string name="location_label">Location:</string>
 	<string name="cuisine_label">Cuisine:</string>
 	<string name="review_label">Review:</string>

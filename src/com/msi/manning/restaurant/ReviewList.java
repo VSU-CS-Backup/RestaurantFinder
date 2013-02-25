@@ -20,7 +20,7 @@ import java.util.List;
 
 /**
  * "List" of reviews screen - show reviews that match Criteria user selected. Users ReviewFetcher
- * which makes a Google Base call via Rome.
+ * which makes a Yelp call.
  * 
  * @author charliecollins
  */
@@ -79,7 +79,7 @@ public class ReviewList extends ListActivity {
         String criteriaLocation = application.getReviewCriteriaLocation();
 
         // get start from, an int, from extras
-        int startFrom = getIntent().getIntExtra(Constants.STARTFROM_EXTRA, 1);
+        int startFrom = getIntent().getIntExtra(Constants.STARTFROM_EXTRA, 0);
 
         loadReviews(criteriaLocation, criteriaCuisine, startFrom);
     }    
@@ -101,7 +101,7 @@ public class ReviewList extends ListActivity {
             case MENU_GET_NEXT_PAGE:
                 // increment the startFrom value and call this Activity again
                 intent = new Intent(Constants.INTENT_ACTION_VIEW_LIST);
-                intent.putExtra(Constants.STARTFROM_EXTRA, getIntent().getIntExtra(Constants.STARTFROM_EXTRA, 1)
+                intent.putExtra(Constants.STARTFROM_EXTRA, getIntent().getIntExtra(Constants.STARTFROM_EXTRA, 0)
                     + ReviewList.NUM_RESULTS_PER_PAGE);
                 startActivity(intent);
                 return true;
@@ -121,7 +121,7 @@ public class ReviewList extends ListActivity {
 
         // startFrom page is not stored in application, for example purposes it's a simple "extra"
         Intent intent = new Intent(Constants.INTENT_ACTION_VIEW_DETAIL);
-        intent.putExtra(Constants.STARTFROM_EXTRA, getIntent().getIntExtra(Constants.STARTFROM_EXTRA, 1));
+        intent.putExtra(Constants.STARTFROM_EXTRA, getIntent().getIntExtra(Constants.STARTFROM_EXTRA, 0));
         startActivity(intent);
     }    
     

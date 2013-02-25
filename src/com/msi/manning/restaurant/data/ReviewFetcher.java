@@ -26,30 +26,25 @@ import org.scribe.oauth.OAuthService;
 public class ReviewFetcher {
 
 	private static final String CLASSTAG = ReviewFetcher.class.getSimpleName();
-	// private static final String QBASE =
-	// "http://navitend.com/androidinaction/reviews.php?type=restaurant";
-	// private static final String QD_PREFIX = "&description=";
-	// private static final String QL_PREFIX = "&location=";
-	// private String query;
-
 	private OAuthService service;
 	private Token accessToken;
 	private OAuthRequest request;
 
 	private final ArrayList<Review> reviews;
+	private final int start;
+	private final int numResults;
 
 	/**
-	 * Construct ReviewFetcher with location, description, rating, and paging
+	 * Construct ReviewFetcher with location, cuisine, rating, and paging
 	 * params.
 	 * 
 	 * @param location
-	 * @param description
+	 * @param cuisine
 	 * @param rating
 	 * @param start
 	 * @param numResults
 	 */
-	public ReviewFetcher(String loc, String des, String rat, int start,
-			int numResults) {
+	public ReviewFetcher(String loc, String cui, String rat, int start, int numResults) {
 		// Update tokens here from Yelp developers site, Manage API access.
 		// http://www.yelp.com/developers/manage_api_keys
 		String consumerKey = "0Zn9dxuhMUyXoNB5WErI1w";
@@ -62,20 +57,23 @@ public class ReviewFetcher {
 		accessToken = new Token(token, tokenSecret);
 
 		Log.v(Constants.LOGTAG, " " + ReviewFetcher.CLASSTAG + " location = "
-				+ loc + " description = " + des + " rating = " + rat
+				+ loc + " cuisine = " + cui + " rating = " + rat
 				+ " start = " + start + " numResults = " + numResults);
 
 		String location = loc;
-		String description = des;
+		String cuisine = cui;
 		String rating = rat;
+		
+		this.start = start;
+		this.numResults = numResults;
 
 		// urlencode params
 		try {
 			if (location != null) {
 				location = URLEncoder.encode(location, "UTF-8");
 			}
-			if (description != null) {
-				description = URLEncoder.encode(description, "UTF-8");
+			if (cuisine != null) {
+				cuisine = URLEncoder.encode(cuisine, "UTF-8");
 			}
 			if (rating != null) {
 				rating = URLEncoder.encode(rating, "UTF-8");
@@ -84,20 +82,11 @@ public class ReviewFetcher {
 			e1.printStackTrace();
 		}
 
-		// build query
-		// this.query = ReviewFetcher.QBASE;
-		// if ((location != null) && !location.equals("")) {
-		// this.query += (ReviewFetcher.QL_PREFIX + location);
-		// }
-		// if ((description != null) && !description.equals("ANY")) {
-		// this.query += (ReviewFetcher.QD_PREFIX + description);
-		// }
-
 		// build Yelp request
 		String term = "Restaurant";
 		request = new OAuthRequest(Verb.GET, "http://api.yelp.com/v2/search");
-		if ((description != null) && !description.equals("ANY")) {
-			request.addQuerystringParameter("term", description + " " + term);
+		if ((cuisine != null) && !cuisine.equals("ANY")) {
+			request.addQuerystringParameter("term", cuisine + " " + term);
 		} else {
 			request.addQuerystringParameter("term", term);
 		}
@@ -120,13 +109,23 @@ public class ReviewFetcher {
 	/**
 	 * Parse JSON.
 	 * 
-	 * @return
+	 * @param  resp
 	 */
 	private ArrayList<Review> parseReviews(String resp) {
 		try {
 			JSONObject mainJson = new JSONObject(resp);
 			JSONArray businesses = mainJson.getJSONArray("businesses");
-			for (int i = 0; i < businesses.length(); i++) {
+			int from = start;
+			if (start >= businesses.length())
+				return reviews;
+			
+			int to;
+			if (businesses.length()<=start+numResults)
+			     to = businesses.length();
+		    else
+			     to = start + numResults;
+			//for (int i = 0; i < businesses.length(); i++) {
+			for (int i = from; i < to; i++) {
 				JSONObject business = businesses.getJSONObject(i);
 				System.out.println("name: " + business.getString("name"));
 				System.out.println("rating: " + business.getString("rating"));

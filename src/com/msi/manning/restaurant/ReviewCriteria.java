@@ -16,7 +16,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 /**
- * "Criteria" to select reviews screen - choose Location, Cuisine, and Rating, and then forward to
+ * "Criteria" to select reviews screen - choose Location, Cuisine, and rating, and then forward to
  * next activity.
  * 
  * @author charliecollins
