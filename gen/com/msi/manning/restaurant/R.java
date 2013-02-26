@@ -26,22 +26,20 @@ public final class R {
     public static final class id {
         public static final int cuisine=0x7f080004;
         public static final int cuisine_label=0x7f080003;
-        public static final int empty=0x7f080010;
+        public static final int empty=0x7f08000e;
         public static final int get_reviews_button=0x7f080005;
         public static final int intro_blurb_criteria=0x7f080000;
         public static final int location=0x7f080002;
-        public static final int location_detail=0x7f08000d;
+        public static final int location_detail=0x7f08000b;
         public static final int location_label=0x7f080001;
-        public static final int location_label_detail=0x7f08000c;
+        public static final int location_label_detail=0x7f08000a;
         public static final int name_detail=0x7f080007;
-        public static final int phone_detail=0x7f08000f;
-        public static final int phone_label_detail=0x7f08000e;
+        public static final int phone_detail=0x7f08000d;
+        public static final int phone_label_detail=0x7f08000c;
         public static final int rating_detail=0x7f080009;
         public static final int rating_label_detail=0x7f080008;
-        public static final int review_detail=0x7f08000b;
         public static final int review_image=0x7f080006;
-        public static final int review_label_detail=0x7f08000a;
-        public static final int spinner_item=0x7f080011;
+        public static final int spinner_item=0x7f08000f;
     }
     public static final class layout {
         public static final int review_criteria=0x7f030000;

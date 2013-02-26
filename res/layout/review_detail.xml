@@ -26,19 +26,11 @@
 			android:layout_marginLeft="10px" android:layout_marginBottom="5px"
 			style="@style/view_text" />
 
-		<TextView android:id="@+id/review_label_detail"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"
-			android:layout_below="@id/rating_detail" android:layout_marginLeft="10px"
-			android:layout_marginBottom="5px" style="@style/label" android:text="@string/review_label" />
-		<TextView android:id="@+id/review_detail"
-			android:layout_width="fill_parent" android:layout_height="wrap_content"
-			android:layout_below="@id/review_label_detail"
-			android:layout_marginLeft="10px" android:layout_marginBottom="5px"
-			style="@style/view_text" />
+
 
 		<TextView android:id="@+id/location_label_detail"
 			android:layout_width="wrap_content" android:layout_height="wrap_content"
-			android:layout_below="@id/review_detail" android:layout_marginLeft="10px"
+			android:layout_below="@id/rating_detail" android:layout_marginLeft="10px"
 			android:layout_marginBottom="5px" style="@style/label" android:text="@string/location_label" />
 		<TextView android:id="@+id/location_detail"
 			android:layout_width="fill_parent" android:layout_height="wrap_content"

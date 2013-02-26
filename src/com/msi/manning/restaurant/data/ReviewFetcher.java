@@ -130,6 +130,7 @@ public class ReviewFetcher {
 				System.out.println("name: " + business.getString("name"));
 				System.out.println("rating: " + business.getString("rating"));
 				System.out.println("phone: " + business.getString("phone"));
+				System.out.println("mobile_url: " + business.getString("mobile_url"));
 				JSONArray address = business.getJSONObject("location")
 						.getJSONArray("display_address");
 				String address_string = "";
@@ -143,6 +144,7 @@ public class ReviewFetcher {
 				review.name = business.getString("name");
 				review.rating = business.getString("rating");
 				review.phone = business.getString("phone");
+				review.link = business.getString("mobile_url");
 				review.location = address_string;
 				reviews.add(review);
 			}

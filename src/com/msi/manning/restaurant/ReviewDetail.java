@@ -79,7 +79,7 @@ public class ReviewDetail extends Activity {
         rating = (TextView) findViewById(R.id.rating_detail);
         location = (TextView) findViewById(R.id.location_detail);
         phone = (TextView) findViewById(R.id.phone_detail);
-        review = (TextView) findViewById(R.id.review_detail);
+        //review = (TextView) findViewById(R.id.review_detail);
         reviewImage = (ImageView) findViewById(R.id.review_image);
         // get the current review from the Application (global state placed there)
         RestaurantFinderApplication application = (RestaurantFinderApplication) getApplication();
@@ -89,7 +89,7 @@ public class ReviewDetail extends Activity {
         name.setText(currentReview.name);
         rating.setText(currentReview.rating);
         location.setText(currentReview.location);
-        review.setText(currentReview.content);
+        //review.setText(currentReview.content);
         if ((currentReview.phone != null) && !currentReview.phone.equals("")) {
             phone.setText(currentReview.phone);
         } else {
