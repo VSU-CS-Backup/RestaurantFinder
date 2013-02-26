@@ -97,7 +97,8 @@ public class ReviewFetcher {
 		 	request.addQuerystringParameter("rating", rating);
 		}
 
-		// request.addQuerystringParameter("rating", "4.0");
+		request.addQuerystringParameter("sort", "2");
+		
 		request.addQuerystringParameter("limit", "20");
 		service.signRequest(accessToken, request);
 
