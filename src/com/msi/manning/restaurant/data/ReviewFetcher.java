@@ -94,9 +94,10 @@ public class ReviewFetcher {
 			request.addQuerystringParameter("location", location);
 		}
 		if ((rating != null) && !rating.equals("")) {
-			request.addQuerystringParameter("rating", rating);
+		 	request.addQuerystringParameter("rating", rating);
 		}
 
+		// request.addQuerystringParameter("rating", "4.0");
 		request.addQuerystringParameter("limit", "20");
 		service.signRequest(accessToken, request);
 
