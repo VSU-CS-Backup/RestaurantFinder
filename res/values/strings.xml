@@ -27,7 +27,7 @@
 	<string name="phone_label">Phone:</string>
 	<string name="alert_label">Sorry!</string>
 	
-	<string name="location_not_supplied_message">Location must be specified \n(City, State [Country]).</string>
+	<string name="location_not_supplied_message">Location must be specified \n(City State).</string>
 	<string name="no_phone_message">No phone number is available to dial for this review.</string>
 	<string name="no_location_message">No location is available to map for this review.</string>
 	<string name="no_link_message">No URL is available to open for this review.</string>
