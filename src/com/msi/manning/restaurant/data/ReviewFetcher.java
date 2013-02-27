@@ -98,6 +98,7 @@ public class ReviewFetcher {
 		}
 
 		request.addQuerystringParameter("sort", "2");
+		//request.addQuerystringParameter("radius_filter", "1000");
 		
 		request.addQuerystringParameter("limit", "20");
 		service.signRequest(accessToken, request);
