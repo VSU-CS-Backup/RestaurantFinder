@@ -47,10 +47,10 @@ public class ReviewFetcher {
 	public ReviewFetcher(String loc, String cui, String rat, int start, int numResults) {
 		// Update tokens here from Yelp developers site, Manage API access.
 		// http://www.yelp.com/developers/manage_api_keys
-		String consumerKey = "0Zn9dxuhMUyXoNB5WErI1w";
-		String consumerSecret = "nMYqpY1ZqSelxzGCT69WnoswNjU";
-		String token = "BVSsPFNspS-GWA3OmeeDreIGqK-KTFST";
-		String tokenSecret = "TijS_myGG1-EIlzNmY8LOxepETI";
+		String consumerKey = "";
+		String consumerSecret = "";
+		String token = "";
+		String tokenSecret = "";
 
 		service = new ServiceBuilder().provider(YelpApi2.class)
 				.apiKey(consumerKey).apiSecret(consumerSecret).build();
